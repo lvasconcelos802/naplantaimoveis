@@ -1,0 +1,53 @@
+﻿body {
+    font: Roboto,Arial,sans-serif;    
+}
+
+
+h1 {
+
+    font-size: 24px;
+}
+h2 {
+    font-size: 22px;
+}
+h3 {
+    font-size: 18px;
+}
+h4 {
+    font-size: 16px;
+}
+h5 {
+    font-size: 14px;
+}
+
+
+
+/* Remove the navbar's default margin-bottom and rounded borders */
+.navbar {
+    margin-bottom: 0;
+    border-radius: 0;
+}
+
+.panel-login {
+    margin: 10px auto;
+    max-width: 400px;
+}
+
+.carousel-caption {
+    position: absolute;
+    top: 10px;
+    left: 15px;
+    text-align: left;
+}
+#carousel-home-imoveis .carousel-control-prev {
+    height:300px;
+}
+#carousel-home-imoveis .carousel-control-next {
+    height: 300px;
+}
+
+.fa-home {
+    color: white;
+    font-size: 24px;    
+}
+

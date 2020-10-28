@@ -1,0 +1,4 @@
+# Group 2
+User-agent: *
+
+Sitemap: https://www.naplantaimoveis.com.br/sitemap.xml

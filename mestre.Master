@@ -1,0 +1,185 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="mestre.master.cs" Inherits="quartoesuite.mestre" %>
+
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head runat="server">
+
+    <script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "Organization",
+    "name": "Na Planta Imóveis",
+    "url": "https://www.naplantaimoveis.com.br",
+    "address": "Brasil",
+    "sameAs": [
+      "https://www.facebook.com/naplantaimovel",
+      "https://www.instagram.com/naplantaimovel",
+      "https://twitter.com/naplantaimovel",
+      "https://www.linkedin.com/in/naplantaimovel"
+    ]
+  }
+    </script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-164151550-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-164151550-1');
+    </script>
+
+    <!-- Google Tag Manager -->
+    <script>
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-KZFM2PN');
+
+    </script>
+    <!-- End Google Tag Manager -->
+
+
+    <script type="text/javascript" src="Scripts/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="Scripts/bootstrap.min.js"></script>
+    <script type="text/javascript" src="Scripts/jquery.Jcrop.min.js"></script>
+    <script type="text/javascript" src="scripts/script.js"></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="google-site-verification" content="Nspfk_bAoJgMVInm4fM-X3tCzEDQpnyblPCYsVDch9A" />
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="https://www.naplantaimoveis.com.br/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://www.naplantaimoveis.com.br/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://www.naplantaimoveis.com.br/favicon-16x16.png">
+    <link rel="manifest" href="https://www.naplantaimoveis.com.br/site.webmanifest">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel="stylesheet" href="Content/bootstrap.min.css">
+    <link rel="stylesheet" href="Content/jquery.Jcrop.min.css">   
+    <link href="Content/font-awesome.min.css" rel="stylesheet">  
+    <link rel="stylesheet" href="Content/style.css">
+
+
+    <meta charset="utf-8">
+    <meta name="author" content="NA PLANTA Imóveis">
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KZFM2PN" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <form id="form" runat="server">
+        <header>
+            <nav class="navbar navbar-expand-sm bg-dark navbar-dark">                
+                
+                <a class="navbar-brand" href="default.aspx" title="NA PLANTA Imóveis">NA PLANTA Imóveis</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <asp:HyperLink ID="hlPerfil" runat="server" class="nav-link" NavigateUrl="~/perfil.aspx" ToolTip="Perfil">Meu Perfil</asp:HyperLink>
+                        </li>
+                        <li class="nav-item">
+                            <asp:HyperLink ID="hlMeusAnuncios" runat="server" class="nav-link" NavigateUrl="~/meus-anuncios.aspx" ToolTip="Meus Anúncios">Meus Anuncios (0)</asp:HyperLink>
+                        </li>
+                        <li class="nav-item">
+                            <asp:HyperLink ID="hlNewsletter" runat="server" class="nav-link" NavigateUrl="~/newsletter.aspx" ToolTip="Newsletter">Newsletter</asp:HyperLink>
+                        </li>
+                        <li class="nav-item">
+                            <asp:HyperLink ID="hlCrmImobiliario" runat="server" NavigateUrl="~/crm-imobiliario.aspx" class="nav-link" ToolTip="CRM Imobiliário">CRM Imobiliário</asp:HyperLink>
+                        </li>
+                        <li class="nav-item">
+                            <asp:HyperLink ID="hlAnunciar" runat="server" NavigateUrl="~/anunciar.aspx" class="nav-link" ToolTip="Anunciar">Anunciar Imóvel</asp:HyperLink>
+                        </li>
+                        <li class="nav-item">
+                            <asp:HyperLink ID="hlEntrar" runat="server" NavigateUrl="~/entrar.aspx" class="nav-link" ToolTip="Entrar">Entrar</asp:HyperLink>
+                            <asp:LinkButton ID="lbtnSair" runat="server" class="nav-link" OnClick="lbtnSair_Click" ToolTip="Sair">Sair</asp:LinkButton>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+        <main role="main">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </main>
+
+        <footer class="text-muted bg-light border-top py-4">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3">
+
+                        <ul class="list-unstyled">
+                            <li>Empresa                           
+                               <ul class="list-inline">
+                                   <li><a href="#" title="Busca">Buscar</a></li>
+                                   <li><a href="anunciar.aspx" title="Anunciar">Anunciar</a></li>
+                                   <li><a href="entrar.aspx" title="Entrar">Entrar</a></li>
+                               </ul>
+                            </li>
+                        </ul>
+
+                    </div>
+                    <div class="col-md-3">
+
+                        <ul class="list-unstyled">
+                            <li>Início                          
+                               <ul class="list-inline">
+                                   <li><a href="#" title="Termos de Uso">Termos de Uso</a></li>
+                                   <li><a href="#" title="Política de Privacidade">Política de Privacidade</a></li>
+                                   <li><a href="#" title="Fale Conosco">Fale Conosco</a></li>
+                                   <li><a href="#" title="Ajuda">Ajuda</a></li>
+                               </ul>
+                            </li>
+                        </ul>
+
+                    </div>
+                    <div class="col-md-3">
+
+                        <ul class="list-unstyled">
+                            <li>Rede Sociais                         
+                               <ul class="list-inline">
+                                   <li class="list-inline-item"><a href="https://www.facebook.com/naplantaimovel/" target="_blank" title="Facebook">
+                                       <img src="image/icons/icon_facebook.png" alt="Facebook" title="Facebook" class="img-thumbnail" /></a></li>
+                                   <li class="list-inline-item"><a href="https://twitter.com/naplantaimovel" target="_blank" title="Twitter">
+                                       <img src="image/icons/icon_twitter.png" alt="Twitter" title="Twitter" class="img-thumbnail" /></a></li>
+                                   <li class="list-inline-item"><a href="https://www.instagram.com/naplantaimovel/" target="_blank" title="Instagram">
+                                       <img src="image/icons/icon_instagram.png" alt="Instagram" title="Instagram" class="img-thumbnail" /></a></li>
+                               </ul>
+                            </li>
+                        </ul>
+
+                    </div>
+                    <div class="col-md-3 text-right">
+                        <p><a href="#" title="Voltar ao topo">Voltar ao topo</a></p>
+                        <p>&copy; NA PLANTA Imóveis 2019-2020</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+    </form>
+
+</body>
+</html>
+
+
+
+
+
