@@ -113,6 +113,14 @@ namespace quartoesuite
                     (item.FindControl("lblStatus") as Label).Text = "Agendado";
                     (item.FindControl("lblStatus") as Label).Visible = true;
                 }
+                else if (status == "3")
+                {
+                    (item.FindControl("lbtNewsletterEditar") as LinkButton).Text = "Visualizar";
+                    (item.FindControl("lbtNewsletterEditar") as LinkButton).Visible = false;
+
+                    (item.FindControl("lblStatus") as Label).Text = "Enviado";
+                    (item.FindControl("lblStatus") as Label).Visible = true;
+                }
 
             }
         }

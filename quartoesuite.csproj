@@ -71,6 +71,11 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="anuncio_excel.aspx" />
+    <Content Include="busca.aspx" />
+    <Content Include="blog.aspx" />
+    <Content Include="blog_detalhes.aspx" />
+    <Content Include="busca_temp.aspx" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-reboot.css" />
@@ -81,77 +86,57 @@
     <Content Include="Content\font-awesome.min.css" />
     <Content Include="Content\jquery.Jcrop.css" />
     <Content Include="Content\jquery.Jcrop.min.css" />
+    <Content Include="Content\themes\base\accordion.css" />
+    <Content Include="Content\themes\base\all.css" />
+    <Content Include="Content\themes\base\autocomplete.css" />
+    <Content Include="Content\themes\base\base.css" />
+    <Content Include="Content\themes\base\button.css" />
+    <Content Include="Content\themes\base\core.css" />
+    <Content Include="Content\themes\base\datepicker.css" />
+    <Content Include="Content\themes\base\dialog.css" />
+    <Content Include="Content\themes\base\draggable.css" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_444444_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_555555_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_777620_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_777777_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cc0000_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Content\themes\base\jquery-ui.css" />
+    <Content Include="Content\themes\base\jquery-ui.min.css" />
+    <Content Include="Content\themes\base\menu.css" />
+    <Content Include="Content\themes\base\progressbar.css" />
+    <Content Include="Content\themes\base\resizable.css" />
+    <Content Include="Content\themes\base\selectable.css" />
+    <Content Include="Content\themes\base\selectmenu.css" />
+    <Content Include="Content\themes\base\slider.css" />
+    <Content Include="Content\themes\base\sortable.css" />
+    <Content Include="Content\themes\base\spinner.css" />
+    <Content Include="Content\themes\base\tabs.css" />
+    <Content Include="Content\themes\base\theme.css" />
+    <Content Include="Content\themes\base\tooltip.css" />
     <Content Include="crm-imobiliario.aspx" />
     <Content Include="default.aspx" />
+    <Content Include="error_403.html" />
+    <Content Include="error_404.html" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="google5990d6de06ddefc1.html" />
-    <Content Include="android-chrome-192x192.png" />
-    <Content Include="android-chrome-512x512.png" />
-    <Content Include="image\android-chrome-192x192.png" />
-    <Content Include="image\android-chrome-512x512.png" />
-    <Content Include="image\anuncio\100\imovel.jpg" />
-    <Content Include="image\anuncio\200\imovel.jpg" />
-    <Content Include="image\anuncio\400\imovel.jpg" />
-    <Content Include="image\anuncio\50\imovel.jpg" />
-    <Content Include="image\anuncio\600\imovel.jpg" />
-    <Content Include="image\anuncio\900\imovel.jpg" />
-    <Content Include="apple-touch-icon.png" />
-    <Content Include="browserconfig.xml" />
-    <Content Include="image\anuncio\crop\imovel.jpg" />
-    <Content Include="image\apple-touch-icon.png" />
-    <Content Include="image\browserconfig.xml" />
-    <Content Include="image\casa2_1024_600.jpg" />
-    <Content Include="image\casa_1024_600.jpg" />
-    <Content Include="image\corretor-de-imoveis.png" />
-    <Content Include="image\empresa\100\foto.jpg" />
-    <Content Include="image\empresa\200\foto.jpg" />
-    <Content Include="image\empresa\400\foto.jpg" />
-    <Content Include="image\empresa\50\foto.jpg" />
-    <Content Include="image\empresa\600\foto.jpg" />
-    <Content Include="image\empresa\900\foto.jpg" />
-    <Content Include="favicon-16x16.png" />
-    <Content Include="favicon-32x32.png" />
-    <Content Include="favicon.ico" />
-    <Content Include="image\favicon-16x16.png" />
-    <Content Include="image\favicon-32x32.png" />
-    <Content Include="image\favicon.ico" />
-    <Content Include="image\foto-newsletter.png" />
-    <Content Include="image\foto-portal.png" />
-    <Content Include="image\icons\icon_facebook.png" />
-    <Content Include="image\icons\icon_instagram.png" />
-    <Content Include="image\icons\icon_tick_1.png" />
-    <Content Include="image\icons\icon_tick_2.png" />
-    <Content Include="image\icons\icon_twitter.png" />
-    <Content Include="image\icons\temp\185958-social-media-icons.png" />
-    <Content Include="image\icons\temp\30-social-networks-vector-logos-768x804.png" />
-    <Content Include="image\icons\temp\depositphotos_150806368-stock-photo-social-networks-icon-logos.jpg" />
-    <Content Include="image\icons\temp\images.png" />
-    <Content Include="image\icons\temp\marketing-nas-redes-sociais.png" />
-    <Content Include="image\icons\temp\O-Que-São-Redes-Sociais-E-Para-Que-Servem-1.png" />
-    <Content Include="image\icons\temp\social-media-icon-transparent-background-2.png" />
-    <Content Include="image\icons\temp\social-network-2267333_960_720.png" />
-    <Content Include="image\icons\temp\social-network-2267333_960_7202.png" />
-    <Content Include="image\icons\temp\social-networks-logos.png" />
-    <Content Include="image\logo_naplantaimoveis.jpg" />
-    <Content Include="image\logo_naplantaimoveis.png" />
-    <Content Include="image\logo_150_150.png" />
-    <Content Include="image\mstile-150x150.png" />
-    <Content Include="mstile-150x150.png" />
-    <Content Include="image\quarto-e-suite.png" />
-    <Content Include="image\sem-foto.jpg" />
-    <Content Include="image\tick.png" />
-    <Content Include="image\usuario\100\foto.jpg" />
-    <Content Include="image\usuario\200\foto.jpg" />
-    <Content Include="image\usuario\400\foto.jpg" />
-    <Content Include="image\usuario\50\foto.jpg" />
-    <Content Include="image\usuario\600\foto.jpg" />
-    <Content Include="image\usuario\900\foto.jpg" />
     <Content Include="error.html" />
-    <Content Include="newsletter_modelo.html" />
-    <Content Include="newsletter.html" />
+    <Content Include="newsletter_excel.aspx" />
     <Content Include="newsletter_criar.aspx" />
     <Content Include="newsletter.aspx" />
-    <Content Include="newsletter_temp.html" />
     <Content Include="perfil.aspx" />
     <Content Include="Content\bootstrap.min.css.map" />
     <Content Include="Content\bootstrap.css.map" />
@@ -159,14 +144,14 @@
     <Content Include="Content\bootstrap-reboot.css.map" />
     <Content Include="Content\bootstrap-grid.min.css.map" />
     <Content Include="Content\bootstrap-grid.css.map" />
-    <Content Include="site.webmanifest" />
     <Content Include="fonts\FontAwesome.otf" />
     <Content Include="fonts\fontawesome-webfont.woff2" />
     <Content Include="fonts\fontawesome-webfont.woff" />
     <Content Include="fonts\fontawesome-webfont.ttf" />
     <Content Include="fonts\fontawesome-webfont.eot" />
-    <Content Include="image\site.webmanifest" />
     <Content Include="newsletter_enviar.ashx" />
+    <Content Include="newsletter_click.ashx" />
+    <Content Include="busca.ashx" />
     <None Include="packages.config" />
     <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Properties\PublishProfiles\targethost.pubxml" />
@@ -195,6 +180,8 @@
     <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
+    <Content Include="Scripts\jquery-ui-1.12.1.js" />
+    <Content Include="Scripts\jquery-ui-1.12.1.min.js" />
     <Content Include="Scripts\popper-utils.js" />
     <Content Include="Scripts\popper-utils.min.js" />
     <Content Include="Scripts\popper.js" />
@@ -305,11 +292,48 @@
     <Compile Include="anunciar.aspx.designer.cs">
       <DependentUpon>anunciar.aspx</DependentUpon>
     </Compile>
+    <Compile Include="anuncio_excel.aspx.cs">
+      <DependentUpon>anuncio_excel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="anuncio_excel.aspx.designer.cs">
+      <DependentUpon>anuncio_excel.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="busca.ashx.cs">
+      <DependentUpon>busca.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="busca.aspx.cs">
+      <DependentUpon>busca.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="busca.aspx.designer.cs">
+      <DependentUpon>busca.aspx</DependentUpon>
+    </Compile>
     <Compile Include="App_Code\classes.cs" />
     <Compile Include="App_Code\crop.cs" />
-    <Content Include="App_Code\newsletter.cs" />
     <Compile Include="App_Code\redimensionar.cs" />
     <Compile Include="App_Code\sitemap.cs" />
+    <Compile Include="blog.aspx.cs">
+      <DependentUpon>blog.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="blog.aspx.designer.cs">
+      <DependentUpon>blog.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="blog_detalhes.aspx.cs">
+      <DependentUpon>blog_detalhes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="blog_detalhes.aspx.designer.cs">
+      <DependentUpon>blog_detalhes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="busca_temp.aspx.cs">
+      <DependentUpon>busca_temp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="busca_temp.aspx.designer.cs">
+      <DependentUpon>busca_temp.aspx</DependentUpon>
+    </Compile>
     <Compile Include="cadastrar.aspx.cs">
       <DependentUpon>cadastrar.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -324,6 +348,7 @@
     <Compile Include="crm-imobiliario.aspx.designer.cs">
       <DependentUpon>crm-imobiliario.aspx</DependentUpon>
     </Compile>
+    <Compile Include="App_Code\csEnviarEmail.cs" />
     <Compile Include="default.aspx.cs">
       <DependentUpon>default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -359,6 +384,10 @@
     <Compile Include="meus-anuncios.aspx.designer.cs">
       <DependentUpon>meus-anuncios.aspx</DependentUpon>
     </Compile>
+    <Compile Include="App_Code\csNewsletter.cs" />
+    <Compile Include="newsletter_click.ashx.cs">
+      <DependentUpon>newsletter_click.ashx</DependentUpon>
+    </Compile>
     <Compile Include="newsletter_criar.aspx.cs">
       <DependentUpon>newsletter_criar.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -375,6 +404,13 @@
     </Compile>
     <Compile Include="newsletter_enviar.ashx.cs">
       <DependentUpon>newsletter_enviar.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="newsletter_excel.aspx.cs">
+      <DependentUpon>newsletter_excel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="newsletter_excel.aspx.designer.cs">
+      <DependentUpon>newsletter_excel.aspx</DependentUpon>
     </Compile>
     <Compile Include="perfil.aspx.cs">
       <DependentUpon>perfil.aspx</DependentUpon>
@@ -395,9 +431,7 @@
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="image\anuncio\300\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />
   </ItemGroup>

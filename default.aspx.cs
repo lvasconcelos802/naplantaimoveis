@@ -103,7 +103,8 @@ namespace quartoesuite
 
                 conn.Open();
 
-                MySqlCommand cmd = new MySqlCommand("SELECT * FROM anuncio, usuario, usuario_nivel, anuncio_edificacao, anuncio_imovel, anuncio_sub_imovel, anuncio_contrato, anuncio_situacao WHERE anuncio_edificacao.id = anuncio.id_edificacao AND anuncio_imovel.id = anuncio.id_imovel AND anuncio_contrato.id = anuncio.id_contrato AND anuncio_sub_imovel.id = anuncio.id_sub_imovel AND anuncio_situacao.id = anuncio.id_situacao AND usuario.id = anuncio.id_usuario AND usuario_nivel.id = usuario.id_nivel AND anuncio.status = @status ORDER BY anuncio.id ASC", conn);
+                MySqlCommand cmd = new MySqlCommand("SELECT * FROM anuncio, usuario, usuario_nivel, anuncio_edificacao, anuncio_imovel, anuncio_sub_imovel, anuncio_contrato, anuncio_situacao WHERE anuncio_edificacao.id = anuncio.id_edificacao AND anuncio_imovel.id = anuncio.id_imovel AND anuncio_contrato.id = anuncio.id_contrato AND anuncio_sub_imovel.id = anuncio.id_sub_imovel AND anuncio_situacao.id = anuncio.id_situacao AND usuario.id = anuncio.id_usuario AND usuario_nivel.id = usuario.id_nivel AND anuncio.posicao = @posicao AND anuncio.status = @status ORDER BY anuncio.id ASC", conn);
+                cmd.Parameters.AddWithValue("@posicao", 1);
                 cmd.Parameters.AddWithValue("@status", 1);
                 MySqlDataReader rdr = cmd.ExecuteReader();
 
@@ -172,7 +173,7 @@ namespace quartoesuite
 
                 conn.Open();
 
-                MySqlCommand cmd = new MySqlCommand("SELECT * FROM anuncio, usuario, usuario_nivel, anuncio_edificacao, anuncio_imovel, anuncio_sub_imovel, anuncio_contrato, anuncio_situacao WHERE anuncio_edificacao.id = anuncio.id_edificacao AND anuncio_imovel.id = anuncio.id_imovel AND anuncio_contrato.id = anuncio.id_contrato AND anuncio_sub_imovel.id = anuncio.id_sub_imovel AND anuncio_situacao.id = anuncio.id_situacao AND usuario.id = anuncio.id_usuario AND usuario_nivel.id = usuario.id_nivel AND anuncio.status = @status ORDER BY anuncio.id ASC", conn);
+                MySqlCommand cmd = new MySqlCommand("SELECT anuncio.id, anuncio_imovel.imovel, anuncio_sub_imovel.sub_imovel, anuncio_edificacao.edificacao, anuncio_contrato.contrato, anuncio_situacao.situacao, anuncio.bairro, anuncio.cidade, anuncio.estado, anuncio.valor, anuncio.area_util, anuncio.quartos, anuncio.banheiros, anuncio.vagas, usuario_nivel.nivel, usuario.nome, usuario.empresa, anuncio.data_aprovacao FROM anuncio, usuario, usuario_nivel, anuncio_edificacao, anuncio_imovel, anuncio_sub_imovel, anuncio_contrato, anuncio_situacao WHERE anuncio_edificacao.id = anuncio.id_edificacao AND anuncio_imovel.id = anuncio.id_imovel AND anuncio_contrato.id = anuncio.id_contrato AND anuncio_sub_imovel.id = anuncio.id_sub_imovel AND anuncio_situacao.id = anuncio.id_situacao AND usuario.id = anuncio.id_usuario AND usuario_nivel.id = usuario.id_nivel AND anuncio.status = @status ORDER BY anuncio.id ASC", conn);
                 cmd.Parameters.AddWithValue("@status", 1);
                 MySqlDataReader rdr = cmd.ExecuteReader();
 
@@ -246,7 +247,7 @@ namespace quartoesuite
 
                 
                 string alt = DataBinder.Eval(e.Item.DataItem, "[\"imovel\"]").ToString() + " " + DataBinder.Eval(e.Item.DataItem, "[\"sub_imovel\"]").ToString() + " para " + DataBinder.Eval(e.Item.DataItem, "[\"contrato\"]").ToString() + " - " + DataBinder.Eval(e.Item.DataItem, "[\"bairro\"]").ToString() + " - " + DataBinder.Eval(e.Item.DataItem, "[\"cidade\"]").ToString() + " - " + DataBinder.Eval(e.Item.DataItem, "[\"estado\"]").ToString();
-                string url = DataBinder.Eval(e.Item.DataItem, "[\"imovel\"]").ToString() + "-" + DataBinder.Eval(e.Item.DataItem, "[\"sub_imovel\"]").ToString() + "-para-" + DataBinder.Eval(e.Item.DataItem, "[\"contrato\"]").ToString() + "-" + DataBinder.Eval(e.Item.DataItem, "[\"bairro\"]").ToString() + "-" + DataBinder.Eval(e.Item.DataItem, "[\"cidade\"]").ToString() + "-" + DataBinder.Eval(e.Item.DataItem, "[\"estado\"]").ToString() + "-" + DataBinder.Eval(e.Item.DataItem, "[\"id\"]").ToString();
+                string url = "imovel-" + DataBinder.Eval(e.Item.DataItem, "[\"imovel\"]").ToString() + "-" + DataBinder.Eval(e.Item.DataItem, "[\"sub_imovel\"]").ToString() + "-para-" + DataBinder.Eval(e.Item.DataItem, "[\"contrato\"]").ToString() + "-" + DataBinder.Eval(e.Item.DataItem, "[\"bairro\"]").ToString() + "-" + DataBinder.Eval(e.Item.DataItem, "[\"cidade\"]").ToString() + "-" + DataBinder.Eval(e.Item.DataItem, "[\"estado\"]").ToString() + "-" + DataBinder.Eval(e.Item.DataItem, "[\"id\"]").ToString();
 
                 (item.FindControl("ImgImovel") as Image).ImageUrl = "../image/anuncio/400/" + DataBinder.Eval(e.Item.DataItem, "[\"foto\"]").ToString();
                 (item.FindControl("ImgImovel") as Image).AlternateText = alt;
@@ -293,5 +294,11 @@ namespace quartoesuite
             }
         }
 
+        protected void bntBuscaSalvar_Click(object sender, EventArgs e)
+        {
+            string key = hidKey.Value;
+
+            Response.Redirect("busca.aspx?" + key);
+        }
     }
 }

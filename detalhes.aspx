@@ -16,16 +16,17 @@
     <!-- breadcrumb fim-->
 
     <div class="container-fluid">
-
-        <div class="row">
-            <div class="col-sm-12">
-                <h1>
-                   <asp:Literal ID="ltlImovel" runat="server"></asp:Literal> <asp:Literal ID="ltlSubImovel" runat="server"></asp:Literal>
-                </h1>
-            </div>
-        </div>
+        
         <div class="row">
             <div class="col-sm-7">
+
+                   <div class="row">
+                      <div class="col-sm-12">
+                         <h1>
+                            <asp:Literal ID="ltlTitulo" runat="server"></asp:Literal>
+                         </h1>
+                      </div>
+                    </div>
 
                     <div class="row">
                             <div class="col-sm-12">                               
@@ -63,6 +64,16 @@
                             </div>
                         </div>
 
+                <!--Descrição-->
+                <asp:Panel ID="pnlDescricao" runat="server" CssClass="card mb-4 shadow-sm" >
+                    <h2 class="card-header">Descrição</h2>
+                    <div class="card-body">
+                        <p class="card-text">
+                            <asp:Literal ID="ltlDescricao" runat="server"></asp:Literal>
+                        </p>
+                    </div>
+                </asp:Panel>                
+                
                 <!--Localização-->
                 <asp:Panel ID="pnlLocalizacao" runat="server" CssClass="card mb-4 shadow-sm">
                     <h2 class="card-header">Localização</h2>
@@ -164,16 +175,7 @@
 
                     </div>
                 </asp:Panel>
-
-                <!--Descrição-->
-                <asp:Panel ID="pnlDescricao" runat="server" CssClass="card mb-4 shadow-sm" Visible="false">
-                    <h2 class="card-header">Descrição</h2>
-                    <div class="card-body">
-                        <p class="card-text">
-                            <asp:Literal ID="ltlDescricao" runat="server"></asp:Literal>
-                        </p>
-                    </div>
-                </asp:Panel>
+                
 
                 <!--Comodidade-->
                 <asp:Panel ID="pnlComodidade" runat="server" CssClass="card mb-4" Visible="false">

@@ -1,0 +1,2 @@
+id;id_usuario;id_contrato;id_edificacao;id_imovel;id_sub_imovel;id_situacao;codigo;cep;endereco;numero;complemento;bairro;cidade;estado;quartos;banheiros;suites;vagas;area_util;area_total;andar;pe_direito;descricao;valor;valor_condominio;valor_iptu;telefone;celular;email;comodidade;planta;data_anuncio;data_aprovacao;data_suspenso;posicao;status
+30;9;1;1;1;1;3;;38414543;rua pedro amancio morais;70;;Jardim Europa;uberlandia;MG;0;0;0;0;0;0;0;0;;0;0;0;34999686499;;;0;0;15/06/2020 14:10;15/06/2020 14:10;15/06/2020 14:10;0;1

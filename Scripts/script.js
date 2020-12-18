@@ -11,8 +11,6 @@ function modal_visualizar() {
 
 $(document).ready(function () {
 
-    
-
     function limpa_formulário_cep() {
         // Limpa valores do formulário de cep.
         $("#ContentPlaceHolder1_txtEndereco").val("");
@@ -70,7 +68,23 @@ $(document).ready(function () {
             //cep sem valor, limpa formulário.
             limpa_formulário_cep();
         }
+    });    
+
+    //busca     
+    $("#ContentPlaceHolder1_txtBusca").focus();
+    $("#ContentPlaceHolder1_txtBusca").autocomplete({
+        source: function (request, response) {
+            $.getJSON("busca.ashx?texto=" + $("#ContentPlaceHolder1_txtBusca").val(), { query: request.term }, response);
+        },
+        minLength: 1,
+        select: function (event, ui) {            
+
+            $("#ContentPlaceHolder1_hidKey").val(ui.item.key);           
+        },
     });
+
+    //busca fim
+
 });
 
 

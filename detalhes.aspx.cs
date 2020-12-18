@@ -25,6 +25,11 @@ namespace quartoesuite
                 else
                 {                    
                     buscaAnuncio();
+
+                    if (Request.QueryString["id_newsletter_relatorio"] != null)
+                    {
+                        updateNewsletterRelatorio();
+                    }
                 }
             }
         }
@@ -45,15 +50,15 @@ namespace quartoesuite
                 while (rdr.Read())
                 {
                     Page.Title = classes.limiteCaracteres(70, rdr.GetString("imovel") + " " + rdr.GetString("sub_imovel") + " para " + rdr.GetString("contrato") + " - " + rdr.GetString("bairro") + " - " + rdr.GetString("cidade") + " - " + rdr.GetString("estado"));
-                    Page.MetaDescription = classes.limiteCaracteres(300, rdr.GetString("imovel") + " " + rdr.GetString("sub_imovel") + " " + rdr.GetString("edificacao") + " para " + rdr.GetString("contrato") + ", " + rdr.GetString("quartos") + " quarto(s), " + rdr.GetString("suites") + " suíte(s), " + rdr.GetString("banheiros") + " banheiro(s), " + rdr.GetString("vagas") + " vaga(s), Área Útil: " + rdr.GetString("area_util") + "m², Área Total: " + rdr.GetString("area_total") + "m²: - Valor " + classes.real(rdr.GetString("valor")) + ", " + rdr.GetString("bairro") + " - " + rdr.GetString("cidade") + " - " + rdr.GetString("estado"));
-
-
-                    string teste = 
+                    Page.MetaDescription = classes.limiteCaracteres(300, rdr.GetString("imovel") + " " + rdr.GetString("sub_imovel") + " " + rdr.GetString("edificacao") + " para " + rdr.GetString("contrato") + ", " + rdr.GetString("quartos") + " quarto(s), " + rdr.GetString("suites") + " suíte(s), " + rdr.GetString("banheiros") + " banheiro(s), " + rdr.GetString("vagas") + " vaga(s) - Valor " + classes.real(rdr.GetString("valor")) + ", " + rdr.GetString("bairro") + " - " + rdr.GetString("cidade") + " - " + rdr.GetString("estado"));
+                                       
 
                     //ltlEdificacao.Text = rdr.GetString("edificacao");
                     //ltlContrato.Text = rdr.GetString("contrato");
-                    ltlImovel.Text = rdr.GetString("imovel");
-                    ltlSubImovel.Text = rdr.GetString("sub_imovel");                    
+                    //ltlImovel.Text = rdr.GetString("imovel");
+                    //ltlSubImovel.Text = rdr.GetString("sub_imovel");   
+                    
+                    ltlTitulo.Text = classes.limiteCaracteres(70, rdr.GetString("imovel") + " " + rdr.GetString("sub_imovel") + " para " + rdr.GetString("contrato") + " - " + rdr.GetString("bairro") + " - " + rdr.GetString("cidade") + " - " + rdr.GetString("estado"));
 
                     //Anunciante                    
                     if (rdr.GetString("logo") != "")
@@ -102,12 +107,9 @@ namespace quartoesuite
                     ltlVagas.Text = rdr.GetString("vagas");
 
 
-                    //Descrição
-                    if (rdr.GetString("descricao") != "")
-                    {
-                        pnlDescricao.Visible = true;
-                        ltlDescricao.Text = rdr.GetString("descricao");
-                    }
+                    //Descrição 
+                    ltlDescricao.Text = classes.limiteCaracteres(300, rdr.GetString("imovel") + " " + rdr.GetString("sub_imovel") + " " + rdr.GetString("edificacao") + " para " + rdr.GetString("contrato") + ", " + rdr.GetString("quartos") + " quarto(s), " + rdr.GetString("suites") + " suíte(s), " + rdr.GetString("banheiros") + " banheiro(s), " + rdr.GetString("vagas") + " - Valor " + classes.real(rdr.GetString("valor")) + ", " + rdr.GetString("bairro") + " - " + rdr.GetString("cidade") + " - " + rdr.GetString("estado")) + "<br/><br/>" + rdr.GetString("descricao");
+                    
 
 
                     //Valor
@@ -262,7 +264,30 @@ namespace quartoesuite
                 conn.Close();
             }
 
-        }       
+        }
 
+        protected bool updateNewsletterRelatorio()
+        {
+            MySqlConnection conn = new MySqlConnection(ConfigurationManager.AppSettings["ConnectionString"]);
+            try
+            {
+                MySqlCommand cmd = conn.CreateCommand();
+                cmd.CommandText = "update newsletter_relatorio set id_anuncio=@id_anuncio where id = @id";
+                cmd.Parameters.AddWithValue("@id", Request.QueryString["id_newsletter_relatorio"]);
+                cmd.Parameters.AddWithValue("@id_anuncio", Request.QueryString["id"]);                
+                conn.Open();
+                cmd.ExecuteNonQuery();               
+            }
+            catch (Exception ex)
+            {
+                Response.Write(ex.ToString());
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+            return true;
+        }
     }
 }

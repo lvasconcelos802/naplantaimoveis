@@ -15,22 +15,13 @@ namespace quartoesuite
     {
 
         /// <summary>
-        /// Controle ltlImovel.
+        /// Controle ltlTitulo.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal ltlImovel;
-
-        /// <summary>
-        /// Controle ltlSubImovel.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal ltlSubImovel;
+        protected global::System.Web.UI.WebControls.Literal ltlTitulo;
 
         /// <summary>
         /// Controle pnlFoto.
@@ -67,6 +58,24 @@ namespace quartoesuite
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Image ibtnImgAnuncio;
+
+        /// <summary>
+        /// Controle pnlDescricao.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pnlDescricao;
+
+        /// <summary>
+        /// Controle ltlDescricao.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal ltlDescricao;
 
         /// <summary>
         /// Controle pnlLocalizacao.
@@ -220,24 +229,6 @@ namespace quartoesuite
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Literal ltlVagas;
-
-        /// <summary>
-        /// Controle pnlDescricao.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pnlDescricao;
-
-        /// <summary>
-        /// Controle ltlDescricao.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal ltlDescricao;
 
         /// <summary>
         /// Controle pnlComodidade.

@@ -28,7 +28,8 @@
 
                 <div class="card mb-3 shadow-sm">
                     <div class="card-body">                        
-                         <p class="card-text">                             
+                        <h2 class="card-title">CRM - Portal de Imóveis</h2> 
+                        <p class="card-text">                             
                              O que é um CRM para imobiliária e como ele pode ajudar nas vendas e locações.<br /> 
                              É por isso que um bom corretor precisa ter um CRM para imobiliária.<br />
                              Sigla para Customer Relationship Management (ou, em bom português, Gestão de Relacionamento com o Cliente)<br /><br />

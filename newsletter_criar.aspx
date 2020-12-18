@@ -120,22 +120,18 @@
                         <asp:Button ID="btnContatosAdicionar" runat="server" CssClass="btn btn-secondary" Text="Adicionar" ValidationGroup="contatos" OnClick="bntContatosAdicionar_Click" />
                     </div>
 
-                    <asp:Repeater ID="rpListaEmail" runat="server">
+                    <asp:Repeater ID="rpListaEmail" runat="server" OnItemDataBound="rpListaEmailOnItemDataBound">
                         <HeaderTemplate>
                             <hr />
                         </HeaderTemplate>
                         <ItemTemplate>
                             <div class="form-group row">
                                 
-                                <div class="col-sm-5">
-                                    <%# DataBinder.Eval(Container.DataItem, "email") %>
-                                </div>
-                                <div class="col-sm-3">
-                                    <%# DataBinder.Eval(Container.DataItem, "nome") %>
-                                </div>
-                                <div class="col-sm-3">
-                                    <%# DataBinder.Eval(Container.DataItem, "grupo") %>
-                                </div>
+                                <div class="col-sm-11">
+                                     <strong>Grupo:</strong> <%# DataBinder.Eval(Container.DataItem, "grupo") %><br />                                 
+                                     <strong>Nome:</strong> <%# DataBinder.Eval(Container.DataItem, "nome") %><br />
+                                     <strong>E-mail:</strong> <asp:Literal ID="ltlEmail" runat="server"></asp:Literal> 
+                                </div>                                
                                 <div class="col-sm-1">
                                     <asp:CheckBox ID="cbEmail" runat="server"/>
                                     <asp:HiddenField ID="hfIdEmail" runat="server" Value='<%# DataBinder.Eval(Container.DataItem, "id") %>' />

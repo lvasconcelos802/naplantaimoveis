@@ -5,6 +5,17 @@
 <html lang="pt-br">
 <head runat="server">
 
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-164151550-1"></script>
+    <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-164151550-1');
+    </script>
+
+
     <script type="application/ld+json">
   {
     "@context": "http://schema.org",
@@ -21,70 +32,33 @@
   }
     </script>
 
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-164151550-1"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-
-        gtag('config', 'UA-164151550-1');
-    </script>
-
-    <!-- Google Tag Manager -->
-    <script>
-        (function (w, d, s, l, i) {
-            w[l] = w[l] || []; w[l].push({
-                'gtm.start':
-                    new Date().getTime(), event: 'gtm.js'
-            }); var f = d.getElementsByTagName(s)[0],
-                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
-                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', 'GTM-KZFM2PN');
-
-    </script>
-    <!-- End Google Tag Manager -->
-
+    <meta name="google-site-verification" content="Nspfk_bAoJgMVInm4fM-X3tCzEDQpnyblPCYsVDch9A" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <meta name="author" content="NA PLANTA Imóveis">
 
     <script type="text/javascript" src="Scripts/jquery-3.4.1.min.js"></script>
     <script type="text/javascript" src="Scripts/bootstrap.min.js"></script>
     <script type="text/javascript" src="Scripts/jquery.Jcrop.min.js"></script>
+    <script type="text/javascript" src="Scripts/jquery-ui-1.12.1.min.js"></script>
     <script type="text/javascript" src="scripts/script.js"></script>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <meta name="google-site-verification" content="Nspfk_bAoJgMVInm4fM-X3tCzEDQpnyblPCYsVDch9A" />
-
-
-    <link rel="apple-touch-icon" sizes="180x180" href="https://www.naplantaimoveis.com.br/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="https://www.naplantaimoveis.com.br/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="https://www.naplantaimoveis.com.br/favicon-16x16.png">
-    <link rel="manifest" href="https://www.naplantaimoveis.com.br/site.webmanifest">
-    <meta name="msapplication-TileColor" content="#da532c">
-    <meta name="theme-color" content="#ffffff">
-
     <link rel="stylesheet" href="Content/bootstrap.min.css">
-    <link rel="stylesheet" href="Content/jquery.Jcrop.min.css">   
-    <link href="Content/font-awesome.min.css" rel="stylesheet">  
+    <link rel="stylesheet" href="Content/jquery.Jcrop.min.css">
+    <link rel="stylesheet" href="Content/themes/base/jquery-ui.min.css">
+    <link href="Content/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="Content/style.css">
 
-
-    <meta charset="utf-8">
-    <meta name="author" content="NA PLANTA Imóveis">
 
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body>
 
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KZFM2PN" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
-
     <form id="form" runat="server">
         <header>
-            <nav class="navbar navbar-expand-sm bg-dark navbar-dark">                
-                
+            <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+
                 <a class="navbar-brand" href="default.aspx" title="NA PLANTA Imóveis">NA PLANTA Imóveis</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
                     <span class="navbar-toggler-icon"></span>
@@ -126,11 +100,12 @@
                     <div class="col-md-3">
 
                         <ul class="list-unstyled">
-                            <li>Empresa                           
+                            <li>Início                          
                                <ul class="list-inline">
-                                   <li><a href="#" title="Busca">Buscar</a></li>
                                    <li><a href="anunciar.aspx" title="Anunciar">Anunciar</a></li>
                                    <li><a href="entrar.aspx" title="Entrar">Entrar</a></li>
+                                   <li><a href="busca.aspx" title="Busca">Busca</a></li>  
+                                   <li><a href="blog.aspx" title="Blog">Blog</a></li>  
                                </ul>
                             </li>
                         </ul>
@@ -139,7 +114,7 @@
                     <div class="col-md-3">
 
                         <ul class="list-unstyled">
-                            <li>Início                          
+                            <li>Empresa                          
                                <ul class="list-inline">
                                    <li><a href="#" title="Termos de Uso">Termos de Uso</a></li>
                                    <li><a href="#" title="Política de Privacidade">Política de Privacidade</a></li>

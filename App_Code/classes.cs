@@ -26,13 +26,24 @@ namespace quartoesuite.App_Code
             chaveCripto = System.Text.ASCIIEncoding.ASCII.GetString(cript);
             return chaveCripto;
 
+        }       
+
+        public static string converterUtf8(string texto)
+        {
+
+            System.Text.Encoding utf_8 = System.Text.Encoding.UTF8;
+            string s_unicode = texto;
+            byte[] utf8Bytes = System.Text.Encoding.UTF8.GetBytes(texto);
+            string s_unicode2 = System.Text.Encoding.UTF8.GetString(utf8Bytes);
+
+            return texto;
         }
 
         public static string removerAcentos(string texto)
         {
 
-            string comAcentos = "ÄÅÁÂÀÃäáâàãÉÊËÈéêëèÍÎÏÌíîïìÖÓÔÒÕöóôòõÜÚÛüúûùÇç /&";
-            string semAcentos = "AAAAAAaaaaaEEEEeeeeIIIIiiiiOOOOOoooooUUUuuuuCc--e";
+            string comAcentos = "ÄÅÁÂÀÃäáâàãÉÊËÈéêëèÍÎÏÌíîïìÖÓÔÒÕöóôòõÜÚÛüúûùÇç /&!@$%¨&*()_+-=/?º]~^<>;:.";
+            string semAcentos = "AAAAAAaaaaaEEEEeeeeIIIIiiiiOOOOOoooooUUUuuuuCc--e------------------------";
 
             for (int i = 0; i < comAcentos.Length; i++)
             {

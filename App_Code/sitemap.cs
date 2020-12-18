@@ -38,11 +38,16 @@ namespace quartoesuite.App_Code
             writer.WriteLine("<lastmod>" + DateTime.Now.ToString("yyyy-MM-dd") + "</lastmod>");            
             writer.WriteLine("<priority>0.80</priority>");
             writer.WriteLine("</url>");
-
-            writer.WriteLine(buscaAnuncio());
+            
 
             writer.WriteLine("<url>");
             writer.WriteLine("<loc>" + ConfigurationManager.AppSettings["url"] + "/crm-imobiliario.aspx</loc>");
+            writer.WriteLine("<lastmod>" + DateTime.Now.ToString("yyyy-MM-dd") + "</lastmod>");
+            writer.WriteLine("<priority>0.64</priority>");
+            writer.WriteLine("</url>");
+
+            writer.WriteLine("<url>");
+            writer.WriteLine("<loc>" + ConfigurationManager.AppSettings["url"] + "/blog.aspx</loc>");
             writer.WriteLine("<lastmod>" + DateTime.Now.ToString("yyyy-MM-dd") + "</lastmod>");
             writer.WriteLine("<priority>0.64</priority>");
             writer.WriteLine("</url>");
@@ -60,6 +65,12 @@ namespace quartoesuite.App_Code
             writer.WriteLine("</url>");
 
             writer.WriteLine("<url>");
+            writer.WriteLine("<loc>" + ConfigurationManager.AppSettings["url"] + "/busca.aspx</loc>");
+            writer.WriteLine("<lastmod>" + DateTime.Now.ToString("yyyy-MM-dd") + "</lastmod>");
+            writer.WriteLine("<priority>0.64</priority>");
+            writer.WriteLine("</url>");
+
+            writer.WriteLine("<url>");
             writer.WriteLine("<loc>" + ConfigurationManager.AppSettings["url"] + "/anunciar.aspx</loc>");
             writer.WriteLine("<lastmod>" + DateTime.Now.ToString("yyyy-MM-dd") + "</lastmod>");            
             writer.WriteLine("<priority>0.64</priority>");
@@ -69,7 +80,11 @@ namespace quartoesuite.App_Code
             writer.WriteLine("<loc>" + ConfigurationManager.AppSettings["url"] + "/recuperar.aspx</loc>");
             writer.WriteLine("<lastmod>" + DateTime.Now.ToString("yyyy-MM-dd") + "</lastmod>");            
             writer.WriteLine("<priority>0.64</priority>");
-            writer.WriteLine("</url>");            
+            writer.WriteLine("</url>");
+
+            writer.WriteLine(buscaBlog());
+
+            writer.WriteLine(buscaAnuncio());                        
 
             writer.WriteLine("</urlset>");
             
@@ -99,12 +114,57 @@ namespace quartoesuite.App_Code
                     while (rdr.Read())
                     {  
                         texto += "<url>";
-                        texto += "<loc>"+ ConfigurationManager.AppSettings["url"] + "/" + classes.removerAcentos(rdr.GetString("imovel") + "-" + rdr.GetString("sub_imovel") + "-para-" + rdr.GetString("contrato") + "-" + rdr.GetString("bairro") + "-" + rdr.GetString("cidade") + "-" + rdr.GetString("estado") + "-" + rdr.GetString("id") + ".aspx") + "</loc>";
+                        texto += "<loc>"+ ConfigurationManager.AppSettings["url"] + "/imovel-" + classes.removerAcentos(rdr.GetString("imovel") + "-" + rdr.GetString("sub_imovel") + "-para-" + rdr.GetString("contrato") + "-" + rdr.GetString("bairro") + "-" + rdr.GetString("cidade") + "-" + rdr.GetString("estado") + "-" + rdr.GetString("id")) + ".aspx</loc>";
                         texto += "<lastmod>" + DateTime.Now.ToString("yyyy-MM-dd") + "</lastmod>";                        
                         texto += "<priority>0.80</priority>";
                         texto += "</url>";
                     }
                 }                
+
+                rdr.Close();
+
+            }
+            catch (Exception ex)
+            {
+                ex.ToString();
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+            return texto;
+
+        }
+
+        public static string buscaBlog()
+        {
+
+            string texto = "";
+
+            MySqlConnection conn = new MySqlConnection(ConfigurationManager.AppSettings["ConnectionString"]);
+
+            try
+            {
+                conn.Open();
+
+                MySqlCommand cmd = new MySqlCommand();
+                cmd.Connection = conn;
+                cmd.CommandText = "SELECT * FROM blog WHERE blog.status = @status ORDER BY blog.id DESC";
+                cmd.Parameters.AddWithValue("@status", 1);
+                MySqlDataReader rdr = cmd.ExecuteReader();
+
+                if (rdr.HasRows)
+                {
+                    while (rdr.Read())
+                    {
+                        texto += "<url>";
+                        texto += "<loc>" + ConfigurationManager.AppSettings["url"] + "/blog-" + classes.removerAcentos(rdr.GetString("titulo") + "-" + rdr.GetString("id")) + ".aspx</loc>";
+                        texto += "<lastmod>" + DateTime.Now.ToString("yyyy-MM-dd") + "</lastmod>";
+                        texto += "<priority>0.80</priority>";
+                        texto += "</url>";
+                    }
+                }
 
                 rdr.Close();
 
