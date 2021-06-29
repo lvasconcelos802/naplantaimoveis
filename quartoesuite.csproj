@@ -71,6 +71,7 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ads.txt" />
     <Content Include="anuncio_excel.aspx" />
     <Content Include="busca.aspx" />
     <Content Include="blog.aspx" />

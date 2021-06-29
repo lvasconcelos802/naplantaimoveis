@@ -8,11 +8,11 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-164151550-1"></script>
     <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
 
-  gtag('config', 'UA-164151550-1');
+        gtag('config', 'UA-164151550-1');
     </script>
 
 
@@ -31,6 +31,7 @@
     ]
   }
     </script>
+
 
     <meta name="google-site-verification" content="Nspfk_bAoJgMVInm4fM-X3tCzEDQpnyblPCYsVDch9A" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -92,6 +93,25 @@
         <main role="main">
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
+
+            <div class="row text-center py-4">
+                <div class="col-sm-12">
+
+                    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                    <!-- anuncio-home -->
+                    <ins class="adsbygoogle"
+                        style="display: block"
+                        data-ad-client="ca-pub-5186547394208416"
+                        data-ad-slot="6207088922"
+                        data-ad-format="auto"
+                        data-full-width-responsive="true"></ins>
+                    <script>
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+
+                </div>
+            </div>
+
         </main>
 
         <footer class="text-muted bg-light border-top py-4">
@@ -104,8 +124,8 @@
                                <ul class="list-inline">
                                    <li><a href="anunciar.aspx" title="Anunciar">Anunciar</a></li>
                                    <li><a href="entrar.aspx" title="Entrar">Entrar</a></li>
-                                   <li><a href="busca.aspx" title="Busca">Busca</a></li>  
-                                   <li><a href="blog.aspx" title="Blog">Blog</a></li>  
+                                   <li><a href="busca.aspx" title="Busca">Busca</a></li>
+                                   <li><a href="blog.aspx" title="Blog">Blog</a></li>
                                </ul>
                             </li>
                         </ul>

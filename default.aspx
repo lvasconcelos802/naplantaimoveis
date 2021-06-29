@@ -13,17 +13,17 @@
             <div id="divBusca" class="row shadow-sm p-2 mb-8 bg-light rounded">
                 <div class="col-sm-11">
                     <asp:TextBox ID="txtBusca" runat="server" CssClass="form-control my-2" ValidationGroup="busca" placeholder="bairro, cidade ou estado"></asp:TextBox>
-                    <asp:HiddenField ID="hidKey" runat="server" />                    
+                    <asp:HiddenField ID="hidKey" runat="server" />
                 </div>
                 <div class="col-sm-1">
                     <asp:Button ID="bntBuscaSalvar" runat="server" CssClass="btn btn-secondary my-2" Text="Buscar" ValidationGroup="busca" OnClick="bntBuscaSalvar_Click" />
                 </div>
             </div>
-            <div id="divAnunciar" class="row shadow-sm p-2 mb-8">                
+            <div id="divAnunciar" class="row shadow-sm p-2 mb-8">
                 <div class="col-sm-12">
-                    <asp:HyperLink ID="HyperLink1" runat="server" CssClass="btn btn-warning my-2" NavigateUrl="~/anunciar.aspx">Anúnciar Imóvel</asp:HyperLink>                    
+                    <asp:HyperLink ID="HyperLink1" runat="server" CssClass="btn btn-warning my-2" NavigateUrl="~/anunciar.aspx">Anúnciar Imóvel</asp:HyperLink>
                 </div>
-            </div>            
+            </div>
 
         </div>
     </section>
@@ -125,9 +125,7 @@
                 <!--/.Carousel Wrapper-->
 
             </div>
-        </div>
-
-
+        </div>        
 
     </div>
 
