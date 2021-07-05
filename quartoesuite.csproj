@@ -282,7 +282,6 @@
     <Content Include="recuperar.aspx" />
     <Content Include="Scripts\jquery.Jcrop.min.js" />
     <Content Include="Scripts\script.js" />
-    <Content Include="sitemap.xml" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
