@@ -20,6 +20,10 @@ namespace quartoesuite
 
             if (!this.IsPostBack)
             {
+                if (Request.QueryString["status"] == "nao-encontrado") {                     
+                    pnlNaoEncontrado.Visible = true;
+                }
+                
                 buscaAnuncio();
             }
         }
