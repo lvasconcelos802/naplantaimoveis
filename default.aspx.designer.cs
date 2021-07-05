@@ -51,6 +51,15 @@ namespace quartoesuite
         protected global::System.Web.UI.WebControls.HyperLink HyperLink1;
 
         /// <summary>
+        /// Controle pnlNaoEncontrado.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pnlNaoEncontrado;
+
+        /// <summary>
         /// Controle rpLista.
         /// </summary>
         /// <remarks>

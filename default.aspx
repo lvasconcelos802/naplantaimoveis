@@ -30,15 +30,16 @@
 
     <div class="container-fluid">
 
-        <div class="row">
+        <div class="row">            
             <div class="col-sm-12">
                 <h1>Imóveis para vender e alugar</h1>
+                <asp:Panel ID="pnlNaoEncontrado" runat="server" Visible="false" CssClass="alert alert-success">Imóvel não encontrado</asp:Panel>
             </div>
         </div>
 
         <div class="row">
 
-            <div class="col-sm-12">
+            <div class="col-sm-12">               
 
                 <!--Carousel Wrapper-->
                 <div id="carousel-home-imoveis" class="carousel slide carousel-multi-item" data-ride="carousel">

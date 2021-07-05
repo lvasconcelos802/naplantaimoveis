@@ -23,8 +23,13 @@ namespace quartoesuite
                     Response.Redirect("default.aspx");
                 }
                 else
-                {                    
-                    buscaAnuncio();
+                {
+                    if (buscaAnuncio() == false) {
+
+                        Response.Redirect("https://www.naplantaimoveis.com.br/default.aspx?status=nao-encontrado", false);
+                        Response.StatusCode = 301;
+                        Response.End();
+                    }
 
                     if (Request.QueryString["id_newsletter_relatorio"] != null)
                     {
@@ -34,9 +39,11 @@ namespace quartoesuite
             }
         }
           
-        protected void buscaAnuncio()
+        protected bool buscaAnuncio()
         { 
             MySqlConnection conn = new MySqlConnection(ConfigurationManager.AppSettings["ConnectionString"]);
+
+            bool retorno = false;
 
             try
             {
@@ -47,85 +54,90 @@ namespace quartoesuite
                 cmd.Parameters.AddWithValue("@status", 1);
                 MySqlDataReader rdr = cmd.ExecuteReader();
 
-                while (rdr.Read())
+                if (rdr.HasRows)
                 {
-                    Page.Title = classes.limiteCaracteres(70, rdr.GetString("imovel") + " " + rdr.GetString("sub_imovel") + " para " + rdr.GetString("contrato") + " - " + rdr.GetString("bairro") + " - " + rdr.GetString("cidade") + " - " + rdr.GetString("estado"));
-                    Page.MetaDescription = classes.limiteCaracteres(300, rdr.GetString("imovel") + " " + rdr.GetString("sub_imovel") + " " + rdr.GetString("edificacao") + " para " + rdr.GetString("contrato") + ", " + rdr.GetString("quartos") + " quarto(s), " + rdr.GetString("suites") + " suíte(s), " + rdr.GetString("banheiros") + " banheiro(s), " + rdr.GetString("vagas") + " vaga(s) - Valor " + classes.real(rdr.GetString("valor")) + ", " + rdr.GetString("bairro") + " - " + rdr.GetString("cidade") + " - " + rdr.GetString("estado"));
-                                       
+                    retorno = true;
 
-                    //ltlEdificacao.Text = rdr.GetString("edificacao");
-                    //ltlContrato.Text = rdr.GetString("contrato");
-                    //ltlImovel.Text = rdr.GetString("imovel");
-                    //ltlSubImovel.Text = rdr.GetString("sub_imovel");   
-                    
-                    ltlTitulo.Text = classes.limiteCaracteres(70, rdr.GetString("imovel") + " " + rdr.GetString("sub_imovel") + " para " + rdr.GetString("contrato") + " - " + rdr.GetString("bairro") + " - " + rdr.GetString("cidade") + " - " + rdr.GetString("estado"));
-
-                    //Anunciante                    
-                    if (rdr.GetString("logo") != "")
+                    while (rdr.Read())
                     {
-                        imgLogo.ImageUrl = "../image/empresa/100/" + rdr.GetString("logo");
-                        imgLogo.AlternateText = rdr.GetString("empresa");
-                        imgLogo.ToolTip = rdr.GetString("empresa");
-                    }
-                    else
-                    {
-                        imgLogo.ImageUrl = "../image/empresa/100/foto.jpg";
-                        imgLogo.AlternateText = rdr.GetString("empresa");
-                        imgLogo.ToolTip = rdr.GetString("empresa");
-                    }
-
-                    ltlNivel.Text = rdr.GetString("nivel");
-                    ltlEmpresa.Text = rdr.GetString("empresa");
-                    ltlNome.Text = rdr.GetString("nome");
-                    ltlCreci.Text = rdr.GetString("creci");
-
-                    ltlTelefone.Text = rdr.GetString("telefone");
-                    ltlCelular.Text = rdr.GetString("celular");
-                    ltlEmail.Text = rdr.GetString("email");
-                    ltlSite.Text = rdr.GetString("site");                    
-
-                    //Código                    
-                    ltlCodigoAnuncio.Text = rdr.GetString("codigo");
-
-                    //Endereço
-                    ltlCep.Text = rdr.GetString("cep");
-                    ltlEndereco.Text = rdr.GetString("endereco");
-                    ltlNumero.Text = rdr.GetString("numero");
-                    ltlComplemento.Text = rdr.GetString("complemento");
-                    ltlBairro.Text = rdr.GetString("bairro");
-                    ltlCidade.Text = rdr.GetString("cidade");
-                    ltlEstado.Text = rdr.GetString("estado");
-
-                    //Caracteristicas
-                    ltlAreaUtil.Text = rdr.GetString("area_util");
-                    ltlAreaTotal.Text = rdr.GetString("area_total");
-                    ltlPeDireito.Text = rdr.GetString("pe_direito");
-                    ltlAndar.Text = rdr.GetString("andar");
-                    ltlQuartos.Text = rdr.GetString("quartos");
-                    ltlSuites.Text = rdr.GetString("suites");
-                    ltlBanheiros.Text = rdr.GetString("banheiros");
-                    ltlVagas.Text = rdr.GetString("vagas");
+                        Page.Title = classes.limiteCaracteres(70, rdr.GetString("imovel") + " " + rdr.GetString("sub_imovel") + " para " + rdr.GetString("contrato") + " - " + rdr.GetString("bairro") + " - " + rdr.GetString("cidade") + " - " + rdr.GetString("estado"));
+                        Page.MetaDescription = classes.limiteCaracteres(300, rdr.GetString("imovel") + " " + rdr.GetString("sub_imovel") + " " + rdr.GetString("edificacao") + " para " + rdr.GetString("contrato") + ", " + rdr.GetString("quartos") + " quarto(s), " + rdr.GetString("suites") + " suíte(s), " + rdr.GetString("banheiros") + " banheiro(s), " + rdr.GetString("vagas") + " vaga(s) - Valor " + classes.real(rdr.GetString("valor")) + ", " + rdr.GetString("bairro") + " - " + rdr.GetString("cidade") + " - " + rdr.GetString("estado"));
 
 
-                    //Descrição 
-                    ltlDescricao.Text = classes.limiteCaracteres(300, rdr.GetString("imovel") + " " + rdr.GetString("sub_imovel") + " " + rdr.GetString("edificacao") + " para " + rdr.GetString("contrato") + ", " + rdr.GetString("quartos") + " quarto(s), " + rdr.GetString("suites") + " suíte(s), " + rdr.GetString("banheiros") + " banheiro(s), " + rdr.GetString("vagas") + " - Valor " + classes.real(rdr.GetString("valor")) + ", " + rdr.GetString("bairro") + " - " + rdr.GetString("cidade") + " - " + rdr.GetString("estado")) + "<br/><br/>" + rdr.GetString("descricao");
-                    
+                        //ltlEdificacao.Text = rdr.GetString("edificacao");
+                        //ltlContrato.Text = rdr.GetString("contrato");
+                        //ltlImovel.Text = rdr.GetString("imovel");
+                        //ltlSubImovel.Text = rdr.GetString("sub_imovel");   
+
+                        ltlTitulo.Text = classes.limiteCaracteres(70, rdr.GetString("imovel") + " " + rdr.GetString("sub_imovel") + " para " + rdr.GetString("contrato") + " - " + rdr.GetString("bairro") + " - " + rdr.GetString("cidade") + " - " + rdr.GetString("estado"));
+
+                        //Anunciante                    
+                        if (rdr.GetString("logo") != "")
+                        {
+                            imgLogo.ImageUrl = "../image/empresa/100/" + rdr.GetString("logo");
+                            imgLogo.AlternateText = rdr.GetString("empresa");
+                            imgLogo.ToolTip = rdr.GetString("empresa");
+                        }
+                        else
+                        {
+                            imgLogo.ImageUrl = "../image/empresa/100/foto.jpg";
+                            imgLogo.AlternateText = rdr.GetString("empresa");
+                            imgLogo.ToolTip = rdr.GetString("empresa");
+                        }
+
+                        ltlNivel.Text = rdr.GetString("nivel");
+                        ltlEmpresa.Text = rdr.GetString("empresa");
+                        ltlNome.Text = rdr.GetString("nome");
+                        ltlCreci.Text = rdr.GetString("creci");
+
+                        ltlTelefone.Text = rdr.GetString("telefone");
+                        ltlCelular.Text = rdr.GetString("celular");
+                        ltlEmail.Text = rdr.GetString("email");
+                        ltlSite.Text = rdr.GetString("site");
+
+                        //Código                    
+                        ltlCodigoAnuncio.Text = rdr.GetString("codigo");
+
+                        //Endereço
+                        ltlCep.Text = rdr.GetString("cep");
+                        ltlEndereco.Text = rdr.GetString("endereco");
+                        ltlNumero.Text = rdr.GetString("numero");
+                        ltlComplemento.Text = rdr.GetString("complemento");
+                        ltlBairro.Text = rdr.GetString("bairro");
+                        ltlCidade.Text = rdr.GetString("cidade");
+                        ltlEstado.Text = rdr.GetString("estado");
+
+                        //Caracteristicas
+                        ltlAreaUtil.Text = rdr.GetString("area_util");
+                        ltlAreaTotal.Text = rdr.GetString("area_total");
+                        ltlPeDireito.Text = rdr.GetString("pe_direito");
+                        ltlAndar.Text = rdr.GetString("andar");
+                        ltlQuartos.Text = rdr.GetString("quartos");
+                        ltlSuites.Text = rdr.GetString("suites");
+                        ltlBanheiros.Text = rdr.GetString("banheiros");
+                        ltlVagas.Text = rdr.GetString("vagas");
 
 
-                    //Valor
-                    ltlEdificacao.Text = rdr.GetString("edificacao");
-                    ltlContrato.Text = rdr.GetString("contrato");
-                    ltlValor.Text = classes.real(rdr.GetString("valor"));
-                    ltlValorCondominio.Text = classes.real(rdr.GetString("valor_condominio"));
-                    ltlValorIptu.Text = classes.real(rdr.GetString("valor_iptu"));
+                        //Descrição 
+                        ltlDescricao.Text = classes.limiteCaracteres(300, rdr.GetString("imovel") + " " + rdr.GetString("sub_imovel") + " " + rdr.GetString("edificacao") + " para " + rdr.GetString("contrato") + ", " + rdr.GetString("quartos") + " quarto(s), " + rdr.GetString("suites") + " suíte(s), " + rdr.GetString("banheiros") + " banheiro(s), " + rdr.GetString("vagas") + " - Valor " + classes.real(rdr.GetString("valor")) + ", " + rdr.GetString("bairro") + " - " + rdr.GetString("cidade") + " - " + rdr.GetString("estado")) + "<br/><br/>" + rdr.GetString("descricao");
 
-                    buscaAnuncioFotos(Convert.ToInt32(rdr.GetString("id")));
-                    buscaComodidade(rdr.GetString("comodidade"));
-                    buscaPlanta(rdr.GetString("planta"));                   
-                    
-                }
 
-                rdr.Close();
+
+                        //Valor
+                        ltlEdificacao.Text = rdr.GetString("edificacao");
+                        ltlContrato.Text = rdr.GetString("contrato");
+                        ltlValor.Text = classes.real(rdr.GetString("valor"));
+                        ltlValorCondominio.Text = classes.real(rdr.GetString("valor_condominio"));
+                        ltlValorIptu.Text = classes.real(rdr.GetString("valor_iptu"));
+
+                        buscaAnuncioFotos(Convert.ToInt32(rdr.GetString("id")));
+                        buscaComodidade(rdr.GetString("comodidade"));
+                        buscaPlanta(rdr.GetString("planta"));
+
+                    }                   
+                }                
+
+                rdr.Close();                
             }
             catch (Exception ex)
             {
@@ -136,6 +148,8 @@ namespace quartoesuite
                 conn.Close();
             }
 
+
+            return retorno;
         }       
 
         protected void buscaAnuncioFotos(int id_anuncio)
