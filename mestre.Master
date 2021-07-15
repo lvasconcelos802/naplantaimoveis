@@ -38,19 +38,22 @@
     <meta name="google-site-verification" content="Nspfk_bAoJgMVInm4fM-X3tCzEDQpnyblPCYsVDch9A" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
-    <meta name="author" content="NA PLANTA Imóveis">
-
-    <script type="text/javascript" src="Scripts/jquery-3.4.1.min.js"></script>
-    <script type="text/javascript" src="Scripts/bootstrap.min.js"></script>
-    <script type="text/javascript" src="Scripts/jquery.Jcrop.min.js"></script>
-    <script type="text/javascript" src="Scripts/jquery-ui-1.12.1.min.js"></script>
-    <script type="text/javascript" src="scripts/script.js"></script>
+    <meta name="author" content="NA PLANTA Imóveis">    
 
     <link rel="stylesheet" href="Content/bootstrap.min.css">
     <link rel="stylesheet" href="Content/jquery.Jcrop.min.css">
     <link rel="stylesheet" href="Content/themes/base/jquery-ui.min.css">
     <link href="Content/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="Content/style.css">
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" href="~/images/favicons/apple-touch-icon.png" sizes="180x180">
+    <link rel="icon" href="~/images/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+    <link rel="icon" href="~/images/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+    <link rel="manifest" href="~/images/favicons/manifest.json">
+    <link rel="mask-icon" href="~/images/favicons/safari-pinned-tab.svg" color="#7952b3">
+    <link rel="icon" href="~/images/favicons/favicon.ico">
+    <meta name="theme-color" content="#7952b3">
 
 
     <asp:ContentPlaceHolder ID="head" runat="server">
@@ -173,6 +176,13 @@
         </footer>
 
     </form>
+
+
+    <script type="text/javascript" src="Scripts/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="Scripts/bootstrap.min.js"></script>
+    <script type="text/javascript" src="Scripts/jquery.Jcrop.min.js"></script>
+    <script type="text/javascript" src="Scripts/jquery-ui-1.12.1.min.js"></script>
+    <script type="text/javascript" src="scripts/script.js"></script>
 
 </body>
 </html>
